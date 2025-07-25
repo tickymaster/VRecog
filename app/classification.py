@@ -508,7 +508,7 @@ def main():
 
     while not exit_var:
         print("\n" + "="*60)
-        print("Welcome to the Vowel Recognition Training Program")
+        print("Vowel Recognition Training Program's Main Menu")
         print("="*60)
         print("TRAINING OPTIONS:")
         print("1. Train for vowel: A")
@@ -587,7 +587,7 @@ def main():
             elif user_input == 15:
                 list_saved_training_data()
             elif user_input == 16:
-                print("Goodbye!")
+                print("Exiting!")
                 exit_var = True
                 
         except ValueError:
