@@ -1,6 +1,22 @@
-# Formant Detector
+# VRecog - Real-time Vowel Recognition System
 
-A real-time formant frequency detection library using C++ for performance and Python bindings for ease of use.
+A complete real-time formant detection and vowel recognition system using C++ for performance and Python for machine learning and user interface.
+
+## Quick Start
+
+```bash
+# 1. Install system dependencies (Ubuntu/Debian)
+sudo apt-get install python3-dev cmake build-essential libfftw3-dev portaudio19-dev pkg-config
+
+# 2. Set up the project
+cd /path/to/v_project
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+
+# 3. Run the vowel recognition program
+.venv/bin/python app/classification.py
+```
 
 ## Features
 
@@ -9,6 +25,10 @@ A real-time formant frequency detection library using C++ for performance and Py
 - Gaussian smoothing and peak detection
 - Formant frequency extraction (F1, F2)
 - Python bindings via pybind11
+- Machine learning vowel classification with scikit-learn
+- Interactive training and testing interface
+- Audio device management
+- Training data persistence
 
 ## Prerequisites
 
@@ -34,18 +54,27 @@ brew install fftw portaudio cmake pkg-config
 
 ## Installation
 
-### Method 1: Editable Installation (Development)
-For development and testing, use editable installation:
-
+### Step 1: Set up Virtual Environment
 ```bash
 # Clone or navigate to the project directory
 cd /path/to/v_project
 
-# Install in editable mode
+# Create virtual environment
+python3 -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate
+```
+
+### Step 2: Install the Project
+For development and testing, use editable installation:
+
+```bash
+# Install in editable mode (with virtual environment activated)
 pip install -e .
 ```
 
-### Method 2: Standard Installation
+### Alternative: Direct Installation
 For production use:
 
 ```bash
@@ -53,9 +82,48 @@ For production use:
 pip install .
 ```
 
+### Step 3: Run the Program
+```bash
+# Option 1: Direct path to virtual environment python
+.venv/bin/python app/classification.py
+
+# Option 2: With activated virtual environment
+source .venv/bin/activate
+python app/classification.py
+```
+
 ## Usage
 
-### Basic Usage
+### Running the Vowel Recognition Program
+
+To run the complete vowel recognition and training program:
+
+```bash
+# Make sure you're in the project directory
+cd /home/tony/projects/c++/v_project
+
+# Activate the virtual environment and run the program
+.venv/bin/python app/classification.py
+```
+
+Or if you have the virtual environment activated:
+
+```bash
+# First activate the virtual environment
+source .venv/bin/activate
+
+# Then run the program
+python app/classification.py
+```
+
+This will launch the interactive vowel recognition training program with options to:
+- Train vowel sounds (A, E, I, O, U)
+- Test real-time vowel recognition
+- Manage audio devices
+- Save/load training data
+- Test model accuracy
+
+### Basic Library Usage
 
 ```python
 import formant_detector
@@ -148,4 +216,8 @@ If compilation fails:
 
 ## License
 
-[Your License Here]
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2025 tickymaster
+
+This project is provided "as is" without warranty of any kind. See the LICENSE file for full terms.
